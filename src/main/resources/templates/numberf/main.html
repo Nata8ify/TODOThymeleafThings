@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Number Feature Page</title>
+</head>
+<body>
+	<div>
+		<a href="http://www.thymeleaf.org/apidocs/thymeleaf/2.0.15/org/thymeleaf/expression/Numbers.html"><h1>Thymeleaf Numbers</h1></a>
+		<table cellpadding="11">
+			<tr>
+				<th>TODO</th>
+				<th>Summary</th>
+			</tr>
+			<tr>
+				<td th:text="'[Multiply Operator] 12 * 10'"></td>
+				<td th:text="12*10"></td>
+				<!-- Also another operand -->
+			</tr>
+			<tr>
+				<td th:text="'[Equal Operator] (12*10 == 4*30)'"></td>
+				<td th:text="12*10 == 4*30"></td>
+				<!-- Also another operand -->
+			</tr>
+			<tr>
+				<td th:text="'Sequences'"></td>
+				<td th:each="n : ${#numbers.sequence(0, 4)}"><i th:text="${n}"></i></td>
+				<!-- sequence(Integer from, Integer to)  -->
+			</tr>
+			<tr>
+				<td th:text="'Sequences + Step'"></td>
+				<td th:each="n : ${#numbers.sequence(0, 100, 20)}"><i th:text="${n}"></i></td>
+				<!-- sequence(Integer from, Integer to, Integer step)  -->
+			</tr>
+			<tr>
+				<td th:text="'Format Decimal (π)'"></td>
+				<td th:text="${#numbers.formatDecimal(pi , 1, 3)}"></td>
+				<!-- <td th:text="${#numbers.formatDecimal(3.14159265359d , 1, 3)}"></td> -->
+				<!-- formatDecimal(Number target, Integer minIntegerDigits, Integer decimalDigits) -->
+			</tr>
+			<tr>
+				<td th:text="'List Decimal Format'"></td>
+				<td th:each="decimalFmt : ${#numbers.listFormatDecimal(decimalList, 2, 2)}"><i th:text="${decimalFmt}"></i></td>
+				<!-- listFormatDecimal(List<? extends Number> target, Integer minIntegerDigits, Integer decimalDigits)   -->
+			</tr>
+			<tr>
+				<td th:text="'Set Decimal Format'"></td>
+				<td th:each="decimalFmt : ${#numbers.listFormatDecimal(decimalSet, 2, 2)}"><i th:text="${decimalFmt}"></i></td>
+				<!-- 	setFormatDecimal(Set<? extends Number> target, Integer minIntegerDigits, Integer decimalDigits)   -->
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

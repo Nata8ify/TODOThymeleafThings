@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+<meta charset="ISO-8859-1"/>
+<title>Number Feature Page</title>
+</head>
+<body>
+		<a href="http://www.thymeleaf.org/apidocs/thymeleaf/2.1.4.RELEASE/org/thymeleaf/expression/Strings.html"><h1>Thymeleaf Strings</h1></a>
+		<table cellpadding="11">
+			<tbody><tr>
+				<th>TODO</th>
+				<th>Summary</th>
+			</tr>
+			<tr>
+				<td>Is String empty ('')</td>
+				<td th:text="${#strings.isEmpty(emptyString)}"></td>
+				<!-- ${#strings.isEmpty(string) -->
+			</tr>
+			<tr>
+				<td>Is String null (null)</td>
+				<td th:text="${#strings.isEmpty(nullString)}"></td>
+				<!-- ${#strings.isEmpty(string) -->
+			</tr>
+			<tr>
+				<td>Is String empty/null (Hello World)</td>
+				<td th:text="${#strings.isEmpty(helloworld)}"></td>
+				<!-- ${#strings.isEmpty(string) -->
+			</tr>
+			<tr>
+				<td>Index of 'World' (Hello World) </td>
+				<td th:text="${#strings.indexOf(helloworld, 'World')}"></td>
+				<!-- ${#strings.indexOf(Object target, String fragment) -->
+			</tr>
+			<tr>
+				<td>Substring for text before 'World' (Hello World) </td>
+				<td th:text="${#strings.substring(helloworld, 0, #strings.indexOf(helloworld, 'World'))}"></td>
+				<!-- ${#strings.substring(Object target, int start, int end)  -->
+			</tr>
+			<tr>
+				<td>Substring for text before 'World' and concat with 'Thymeleaf' (Hello World) </td>
+				<td th:text="${(#strings.substring(helloworld, 0, #strings.indexOf(helloworld, 'World'))).concat(thymeleaf)}"></td>
+				<!-- ${#strings.substring(Object target, int start, int end)  -->
+				<!-- ${#strings.concat(Object... values)  -->
+				<!-- Make thing more complex is what I'm good at. -->
+			</tr>
+			<tr>
+				<td>Text Length (Hello World)</td>
+				<td th:text="${#strings.length(helloworld)}"></td>
+				<!-- ${#strings.length(string) -->
+			</tr>
+		</tbody>
+		</table>
+
+</body></html>

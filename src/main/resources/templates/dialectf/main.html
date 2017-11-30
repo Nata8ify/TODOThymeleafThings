@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Number Feature Page</title>
+</head>
+<body>
+	<div>
+		<a href="http://www.thymeleaf.org/apidocs/thymeleaf/2.1.4.RELEASE/org/thymeleaf/expression/Strings.html"><h1>Thymeleaf Strings</h1></a>
+		<table cellpadding="11">
+			<tr>
+				<th>TODO</th>
+				<th>Summary</th>
+			</tr>
+			<tr>
+				<td th:text="'Is String empty (\'\')'"></td>
+				<td th:text="${#strings.isEmpty(emptyString)}"></td>
+				<!-- ${#strings.isEmpty(string) -->
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>
